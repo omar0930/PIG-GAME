@@ -27,7 +27,6 @@ A fun two-player dice game built with HTML, CSS, and JavaScript.
 2. Open `index.html` in a browser.
 
 ## 📌 Future Enhancements
-- 🔊 Sound effects for actions
 - 🎭 Dice roll animations
 - 🎯 Custom winning score option
 - 🌙 Dark mode toggle
