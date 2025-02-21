@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+  height: 100vh;
+  color: #333;
+  background-image: linear-gradient(to top left, #753682 0%, #bf2e34 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* MAIN GAME CONTAINER */
+main {
+  position: relative;
+  width: 80rem;
+  height: 50rem;
+  background-color: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(200px);
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
+  border-radius: 9px;
+  overflow: hidden;
+  display: flex;
+}
+
+/* PLAYER SECTIONS */
+.player {
+  flex: 50%;
+  padding: 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.75s;
+}
+
+/* PLAYER DETAILS */
+.name {
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+.score {
+  font-size: 6rem;
+  font-weight: 300;
+  color: #c7365f;
+  margin-bottom: auto;
+}
+
+/* ACTIVE PLAYER */
+.player--active {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.player--active .name {
+  font-weight: 700;
+}
+
+.player--active .score {
+  font-weight: 400;
+}
+
+/* CURRENT SCORE */
+.current {
+  background-color: #c7365f;
+  opacity: 0.8;
+  border-radius: 9px;
+  color: #fff;
+  width: 65%;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.75s;
+}
+
+.current-label {
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #ddd;
+}
+
+.current-score {
+  font-size: 3rem;
+}
+
+/* BUTTON STYLES */
+.btn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+  padding: 1rem 2.5rem;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%);
+  color: white;
+}
+
+/* Hover Effects */
+.btn:hover {
+  transform: translateX(-50%) scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Click Effects */
+.btn:active {
+  transform: translateX(-50%) scale(0.98);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* BUTTON POSITIONS */
+.btn--new {
+  top: 3rem;
+}
+
+.btn--roll {
+  top: 32rem;
+}
+
+.btn--hold {
+  top: 38rem;
+}
+
+/* WINNING SCORE INPUT (MOVED UNDER HOLD BUTTON) */
+#winning-score {
+  position: absolute;
+  top: 44rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  border: 2px solid #c7365f;
+  font-size: 1.5rem;
+  text-align: center;
+  background: white;
+  color: #333;
+  font-weight: bold;
+}
+
+/* DICE IMAGE */
+/* DICE IMAGE (MOVED LOWER) */
+.dice {
+  position: absolute;
+  left: 50%;
+  top: 14rem; /* Previously 12rem, moved 2rem lower */
+  transform: translateX(-50%);
+  height: 8rem;
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
+}
+
+.hidden {
+  display: none;
+}
+
+/* WINNING PLAYER STYLES */
+.player--winner {
+  background-color: #2f2f2f;
+}
+
+.player--winner .name {
+  font-weight: 700;
+  color: #c7365f;
+}
+
+/* HIGH SCORE LEADERBOARD */
+#leaderboard {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  font-weight: bold;
+  color: gold;
+  text-shadow: 1px 1px 5px black;
+}
+
+/* WINNER MESSAGE */
+#winner-message {
+  position: absolute;
+  top: 18rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 3rem;
+  font-weight: bold;
+  color: gold;
+  text-shadow: 2px 2px 10px black;
+}
+
+/* DARK MODE STYLES */
+body.dark-mode {
+  background: #1a1a1a;
+  color: white;
+}
+
+.dark-mode .player {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.dark-mode .player--active {
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 3px solid #fff;
+}
+
+.dark-mode #winning-score {
+  background: #222;
+  color: white;
+  border-color: #fff;
+}
+
+.dark-mode #leaderboard {
+  color: #f1c40f;
+}
+
+.dark-mode #winner-message {
+  color: #f39c12;
+}
+
+/* DARK MODE BUTTON */
+.btn--darkmode {
+  top: 8rem;
+  background: black;
+  color: white;
+  border-radius: 50px;
+  padding: 1rem 3rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn--darkmode:hover {
+  background: #444;
+  color: #ddd;
+}
