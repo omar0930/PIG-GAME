@@ -9,10 +9,10 @@ A fun two-player dice game built with HTML, CSS, and JavaScript.
 - First player to reach **100 points** wins!
 
 ## 🚀 Features
-- 🎨 Modern and responsive UI
-- 🎲 Dynamic dice roll with images
-- 🏆 Winner highlight
-- 🔄 New game button to reset anytime
+- 🎨 Modern and responsive UI.
+- 🎲 Dynamic dice roll with images.
+- 🏆 Winner highlight.
+- 🔄 New game button to reset anytime.
 
 ## 🎮 How to Play
 1. Click **Roll Dice** to roll.
